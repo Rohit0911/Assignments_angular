@@ -1,0 +1,34 @@
+
+.input-cls{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding: 3px 3px; */
+    width: 50%;
+
+}
+
+
+.header{
+    background-color: burlywood;
+    padding: 30px;
+    
+    
+    text-decoration: none;
+    
+}
+    
+    
+.header-nav{ 
+        font-size:x-large;
+        font-family: 'Times New Roman', Times, serif;
+     
+        display: flex;
+        align-items: center;
+        
+        justify-content: space-around;
+
+    
+
+}

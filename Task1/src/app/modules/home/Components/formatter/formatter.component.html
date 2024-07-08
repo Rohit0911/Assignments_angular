@@ -1,0 +1,27 @@
+<div class="parent">
+
+    <div class="formatter">
+        
+        <div class="wordchar">
+            
+            <p>Word count : {{wordCount}}</p>
+            <p>Char Count :{{charCOunt}} </p>
+            <!-- <p>Message length is : {{message}}</p> -->
+    
+    
+        </div>
+        <div class="operations ">
+    
+            <div class="btn-container">
+                <button type="button" id="clearbtn" (click)="getId($event)" >Clear all</button>
+                <button type="button" id="whspace" (click)="getId($event)">White-space Remove</button>
+                <button type="button" id="reverse" (click)="getId($event)">Reverse all</button>
+                <button type="button" id="rmspch" (click)="getId($event)" >Remove speacial Char</button>
+                <button type="button" id="rmstyle" (click)="getId($event)">Remove styling</button>
+                <button type="button" id="capstext" (click)="getId($event)">Capitalize text</button>
+            </div>
+    
+        </div>
+    </div>
+</div>
+

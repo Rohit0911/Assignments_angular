@@ -1,12 +1,21 @@
-<div class="display">
-    <div class="input-text">
+<div class="Text">
+  
+  <div class="input">
+    <input
+      class="input-class"
+      placeholder="Type text here..."
+      type="text"
+      (input)="oninputChange($event)"
+    />
+  </div>
 
-        <input class="input" type="text">
 
-    
+
+  <div class="output">
+    <div class="output-class">
+      <p>
+        {{ displayVal }}
+      </p>
     </div>
-    <div class="output-text">
-        <input class="output" type="text">
-
-    </div>
+  </div>
 </div>
