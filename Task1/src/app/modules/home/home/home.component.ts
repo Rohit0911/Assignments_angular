@@ -18,6 +18,6 @@ export class HomeComponent implements OnInit {
 
   onButtonClick(item:any){
     this.currentOperation=item;
-  }
+
 
 }
