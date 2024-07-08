@@ -59,7 +59,11 @@ export class FormatterComponent implements OnInit {
   // message: string='';
 
   btn:any;
-  @Output() buttonClick=new EventEmitter<any>();
+@Output() buttonClick=new EventEmitter<{type:any}>();
+
+// sendOperations(type:any){
+//   this.buttonClick.emit({type});
+// }
 
   getId(event:any){
     if(event.targetId){

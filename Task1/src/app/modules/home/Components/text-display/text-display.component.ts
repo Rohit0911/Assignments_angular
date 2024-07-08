@@ -10,7 +10,7 @@ import { SharedService } from '../../Shared/shared.service';
 })
 
 export class TextDisplayComponent implements OnInit {
-  el: any;
+  
 
   
   ngOnInit(): void {
@@ -48,15 +48,15 @@ export class TextDisplayComponent implements OnInit {
 
   // }
 
-  ngOnChanges(change:SimpleChanges){
-    if(change['item']){
-      this.updateId(change['item'].currentValue);
-
-    }
-
-  }
 
   @Input()
+  set textOperations(operations:{type:string}){
+    if(operations){
+      this.performOperation(operations.type);
+    }
+  }
+
+
 
   // set operations(value:void){
   //   if(value){
@@ -71,7 +71,7 @@ export class TextDisplayComponent implements OnInit {
 text1:string=''
 text2:string=''
 
-  updateId(id:any){
+performOperation(id:any){
 
     switch(id){
       case 'clearbtn':
@@ -89,9 +89,9 @@ text2:string=''
       case 'rmspch':
         this.text2=this.text1.replace(/[^a-zA-Z0-9]/g,'');
         break;
-      case 'rmstyle':
-        const element=this.el.nativeElement.querySelector('.remove-style');
-        break;
+      // case 'rmstyle':
+      //   const element=this.el.nativeElement.querySelector('.remove-style');
+      //   break;
       case 'capstext':
         this.text2=this.text1.toUpperCase();
         break;

@@ -14,9 +14,10 @@ export class HomeComponent implements OnInit {
     
   }
 
-  buttonClickevent:any='';
+  currentOperation:any='';
+
   onButtonClick(item:any){
-    this.buttonClickevent=item;
+    this.currentOperation=item;
   }
 
 }
