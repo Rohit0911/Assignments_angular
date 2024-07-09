@@ -25,6 +25,19 @@ export class HomeComponent implements OnInit {
 
 
   }
+  childVal='';
+
+
+  sendToDisplay():any{
+    this.childVal=this.childData;
+    return this.childVal;
+  }
+
+
+
+
+
+
 
  
   

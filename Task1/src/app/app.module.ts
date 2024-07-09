@@ -9,7 +9,7 @@ import { HomeComponent } from './modules/home/home/home.component';
 import { TextDisplayComponent } from './modules/home/Components/text-display/text-display.component';
 import { FormatterComponent } from './modules/home/Components/formatter/formatter.component';
 import { HomeModule } from './modules/home/home.module';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +25,8 @@ import { HomeModule } from './modules/home/home.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    FormsModule
     
     
   ],

@@ -23,7 +23,7 @@ export class FormatterComponent implements OnInit {
 
   ngOnInit():void {
 
-   this.sharedService.newdata.subscribe(data=>{
+   this.sharedService.dataChange.subscribe(data=>{
     this.receieveddata=data;
     this.compute();
 
@@ -67,7 +67,6 @@ export class FormatterComponent implements OnInit {
       this.idButton=event.target.id;
       this.updateSignal.emit(this.idButton);
     // }
-
 
     
   }

@@ -14,6 +14,10 @@ export class TextDisplayComponent implements OnInit, OnChanges {
   
 
   
+name:string=''
+result:string='';
+
+  
   ngOnInit(): void {
       
   }
@@ -22,33 +26,33 @@ export class TextDisplayComponent implements OnInit, OnChanges {
     getValue(val:string){
       this.displayVal=val
     }
-    
+
   // constructor(){}
 
-  oninputChange(event :any){
-    this.displayVal=event.target.value;
-    this.sharedServices.setInputData(this.displayVal);
+  // oninputChange(event :any){
+  //   this.displayVal=event.target.value;
+  //   this.sharedServices.setInputData(this.displayVal);
+
+  // }
+
+
+
+
+  todisplay(){
+    this.sharedServices.setDataChange(this.name);
 
   }
 
 
-  @Output() sendtoParent=new EventEmitter<any>();
+  // @Output() sendtoParent=new EventEmitter<any>();
 
 
-  sendData(event:any){
-    this.sendtoParent.emit(this.displayVal);
-  }
+  // sendData(event:any){
+  //   this.sendtoParent.emit(this.displayVal);
+  // }
 
 
   @Input() getCharId :any;
-
-
-
-
-
-
-
-
 
 
 
@@ -60,11 +64,8 @@ export class TextDisplayComponent implements OnInit, OnChanges {
 
 
 
- name:string=''
- result:string='';
 
-
-fontSize=15;
+fontSize=10;
 stylethis:{[key:string]:string}={'font-size': `${this.fontSize}px`};
 
 constructor(private sharedServices :SharedService,private render:Renderer2, private el:ElementRef){}
@@ -78,6 +79,7 @@ display(){
 ngOnChanges(changes:SimpleChanges):void{
 
   // console.log("2");
+
   if(changes['getCharId']){
     console.log("OnChange works");
     console.log(changes['getCharId'].currentValue);
@@ -95,17 +97,47 @@ ngOnChanges(changes:SimpleChanges):void{
         break;
 
       case 'reverse':
+
         this.result=this.name.split('').reverse().join('');
         break;
+
       case 'rmspch':
         this.result=this.name.replace(/[^a-zA-Z0-9]/g,'');
         break;
-      // case 'rmstyle':
-      //   const element=this.el.nativeElement.querySelector('.remove-style');
-      //   break;
+
+      case 'rmstyle':
+        const element=this.el.nativeElement.querySelector('.remove-style');
+        this.render.removeAttribute(element,'style');
+        break;
+        
       case 'capstext':
         this.result=this.name.toUpperCase();
         break;
+
+      case 'fontsize':
+        this.stylethis
+        break;
+      case 'bold':
+        this.stylethis['font-weight']='bold';
+        break;
+      case 'italybtn':
+        this.stylethis['font-style']='italic'
+        break;
+      case 'underline':
+        this.stylethis['text-decoration']='underline'
+        break;
+      case 'incfont':
+        this.fontSize+=10;
+        this.stylethis['font-size']=`${this.fontSize}px`
+        break;
+      case 'dcfont':
+        this.fontSize-=10;
+        this.stylethis['font-size']=`${this.fontSize}px`
+        break;
+      default:
+        this.stylethis['color']=`${this.getCharId}`
+        break;
+
       
     }
     
@@ -114,21 +146,6 @@ ngOnChanges(changes:SimpleChanges):void{
   
 
 }
-
-
-
-
-
-
-performOperation(id:any){
-debugger
-    switch(id){
-      
-        
-    }
-  }
-
-  
 
 
 
