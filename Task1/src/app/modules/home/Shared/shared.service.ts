@@ -27,4 +27,13 @@ export class SharedService {
 
     
   }
+
+  private inpdata:string='';
+  
+  dataChange:EventEmitter<string>=new EventEmitter<string>();
+
+  setDataChange(data:string){
+    this.inpdata=data;
+    this.dataChange.emit(this.inpdata);
+  }
 }
