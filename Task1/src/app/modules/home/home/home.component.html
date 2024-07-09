@@ -15,11 +15,14 @@
 
 <div class="Input-cls">
      
-    <text-display></text-display>
+    <!-- <text-display (sendtoParent)="receiveMessage($event)" ></text-display> -->
+
+   <text-display [getCharId]="(childData)"></text-display>
+
 
   
 
-    <text-formatter (buttonClick)="onButtonClick($event)"></text-formatter>
+    <text-formatter (updateSignal)="receiveMessage($event)"></text-formatter>
    
 
    

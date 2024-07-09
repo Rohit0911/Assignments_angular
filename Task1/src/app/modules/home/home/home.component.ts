@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { log } from 'console';
 
 @Component({
   selector: 'app-home',
@@ -16,11 +17,30 @@ export class HomeComponent implements OnInit {
     
   }
 
-  currentOperation:any='';
+  childData:any='';
 
-  onButtonClick(item:any){
-    this.currentOperation=item;
+  receiveMessage($event:any){
+    this.childData=$event;
+    // console.log(this.childData);
+
+
   }
+
+ 
+  
+
+
+
+
+  // currentOperation:any='';
+
+  // onButtonClick(item:any){
+  //   this.currentOperation=item;
+  // }
+
+
+
+  
 
 
 }

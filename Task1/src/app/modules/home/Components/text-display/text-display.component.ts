@@ -1,5 +1,6 @@
 import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit,Output,Renderer2,SimpleChanges } from '@angular/core';
 import { SharedService } from '../../Shared/shared.service';
+import { log } from 'console';
 
 @Component({
   selector: 'text-display',
@@ -18,10 +19,10 @@ export class TextDisplayComponent implements OnInit, OnChanges {
   }
 
   displayVal:any
-  
-
-
-  
+    getValue(val:string){
+      this.displayVal=val
+    }
+    
   // constructor(){}
 
   oninputChange(event :any){
@@ -31,11 +32,20 @@ export class TextDisplayComponent implements OnInit, OnChanges {
   }
 
 
+  @Output() sendtoParent=new EventEmitter<any>();
 
-  // getValue(val:string){
-  //   this.displayVal=val
-    
-  // }
+
+  sendData(event:any){
+    this.sendtoParent.emit(this.displayVal);
+  }
+
+
+  @Input() getCharId :any;
+
+
+
+
+
 
 
 
@@ -47,8 +57,6 @@ export class TextDisplayComponent implements OnInit, OnChanges {
   //   this.sharedServices.changeData(displayVal)
 
   // }
-
-
 
 
 
@@ -65,15 +73,15 @@ display(){
   this.sharedServices.setDataChange(this.name);
 }
 
-@Input() item:any='none';
+
 
 ngOnChanges(changes:SimpleChanges):void{
 
-  console.log("2");
-  if(changes['item']){
+  // console.log("2");
+  if(changes['getCharId']){
     console.log("OnChange works");
-    console.log(changes['item'].currentValue);
-    const btnVal =changes['item'].currentValue;
+    console.log(changes['getCharId'].currentValue);
+    const btnVal =changes['getCharId'].currentValue;
 
     switch(btnVal){
       case 'clearbtn':
@@ -81,6 +89,7 @@ ngOnChanges(changes:SimpleChanges):void{
          this.name='';
          this.result='';
          break;
+         
       case 'whspace':
         this.result=this.name.replace(/\s+/g, '');
         break;

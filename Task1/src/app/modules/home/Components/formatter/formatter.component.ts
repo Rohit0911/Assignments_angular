@@ -49,29 +49,26 @@ export class FormatterComponent implements OnInit {
   // }
 
 
-
-  
-
-  
-
-
-
   // console.log(message);
   
 
   // message: string='';
 
-  @Output() updateData=new EventEmitter<any>();
+
+
+  @Output() updateSignal=new EventEmitter<any>();
 
   getId(event:any){
-    console.log("1");
-    if(event.target=='favcolor'){
-      this.idColor=event.target.value;
-      this.updateData.emit(this.idColor);
-    }else{
+    // console.log("1");
+    // if(event.target=='favcolor'){
+    //   this.idColor=event.target.value;
+    //   this.updateSignal.emit(this.idColor);
+    // }else{
       this.idButton=event.target.id;
-      this.updateData.emit(this.idButton);
-    }
+      this.updateSignal.emit(this.idButton);
+    // }
+
+
     
   }
 

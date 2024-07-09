@@ -32,6 +32,7 @@ export class SharedService {
   
   dataChange:EventEmitter<string>=new EventEmitter<string>();
 
+  
   setDataChange(data:string){
     this.inpdata=data;
     this.dataChange.emit(this.inpdata);
