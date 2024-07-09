@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SharedService } from '../../Shared/shared.service';
+import { log } from 'console';
 
 @Component({
-  selector: 'app-formatter',
+  selector: 'text-formatter',
   templateUrl: './formatter.component.html',
   styleUrls: ['./formatter.component.css']
 })
@@ -10,6 +11,8 @@ import { SharedService } from '../../Shared/shared.service';
 
 export class FormatterComponent implements OnInit {
   receieveddata:string='';
+  idButton:any='';
+  idColor:any='';
   wordCount:number=0;
   charCOunt:number=0;
 
@@ -58,18 +61,18 @@ export class FormatterComponent implements OnInit {
 
   // message: string='';
 
-  btn:any;
-@Output() buttonClick=new EventEmitter<{type:any}>();
-
-// sendOperations(type:any){
-//   this.buttonClick.emit({type});
-// }
+  @Output() updateData=new EventEmitter<any>();
 
   getId(event:any){
-    if(event.targetId){
-      this.btn=event.target.id;
-      this.buttonClick.emit(this.btn);
+    console.log("1");
+    if(event.target=='favcolor'){
+      this.idColor=event.target.value;
+      this.updateData.emit(this.idColor);
+    }else{
+      this.idButton=event.target.id;
+      this.updateData.emit(this.idButton);
     }
+    
   }
 
   

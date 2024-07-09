@@ -6,6 +6,9 @@ const routes: Routes = [
   {
     path: 'app-home', component:HomeComponent
   },
+  {
+    path: '', component:HomeComponent
+  },
 
   // {
   //   path:'app-database',component:DatabaseComponent

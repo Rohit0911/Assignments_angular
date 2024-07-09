@@ -1,15 +1,15 @@
-import { Component, EventEmitter, Input, OnInit,Output,SimpleChanges } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit,Output,Renderer2,SimpleChanges } from '@angular/core';
 import { SharedService } from '../../Shared/shared.service';
 
 @Component({
-  selector: 'app-text-display',
+  selector: 'text-display',
   templateUrl:'./text-display.component.html',
   styleUrls: ['./text-display.component.css']
 
   
 })
 
-export class TextDisplayComponent implements OnInit {
+export class TextDisplayComponent implements OnInit, OnChanges {
   
 
   
@@ -21,7 +21,7 @@ export class TextDisplayComponent implements OnInit {
   
 
 
-  constructor(private sharedServices :SharedService){}
+  
   // constructor(){}
 
   oninputChange(event :any){
@@ -49,52 +49,72 @@ export class TextDisplayComponent implements OnInit {
   // }
 
 
-  @Input()
-  set textOperations(operations:{type:string}){
-    if(operations){
-      this.performOperation(operations.type);
-    }
-  }
 
 
 
-  // set operations(value:void){
-  //   if(value){
-  //     this.modifyText();
-  //   }
-  // }
+ name:string=''
+ result:string='';
 
-  // modifyText(){
-  //   this.displayVal=this.displayVal.toUpperCase();
-  // }
 
-text1:string=''
-text2:string=''
+fontSize=15;
+stylethis:{[key:string]:string}={'font-size': `${this.fontSize}px`};
 
-performOperation(id:any){
+constructor(private sharedServices :SharedService,private render:Renderer2, private el:ElementRef){}
 
-    switch(id){
+display(){
+  this.sharedServices.setDataChange(this.name);
+}
+
+@Input() item:any='none';
+
+ngOnChanges(changes:SimpleChanges):void{
+
+  console.log("2");
+  if(changes['item']){
+    console.log("OnChange works");
+    console.log(changes['item'].currentValue);
+    const btnVal =changes['item'].currentValue;
+
+    switch(btnVal){
       case 'clearbtn':
 
-         this.text1='';
-         this.text2='';
+         this.name='';
+         this.result='';
          break;
       case 'whspace':
-        this.text2=this.text1.replace(/\s+/g, '');
+        this.result=this.name.replace(/\s+/g, '');
         break;
 
       case 'reverse':
-        this.text2=this.text1.split('').reverse().join('');
+        this.result=this.name.split('').reverse().join('');
         break;
       case 'rmspch':
-        this.text2=this.text1.replace(/[^a-zA-Z0-9]/g,'');
+        this.result=this.name.replace(/[^a-zA-Z0-9]/g,'');
         break;
       // case 'rmstyle':
       //   const element=this.el.nativeElement.querySelector('.remove-style');
       //   break;
       case 'capstext':
-        this.text2=this.text1.toUpperCase();
+        this.result=this.name.toUpperCase();
         break;
+      
+    }
+    
+    
+  }
+  
+
+}
+
+
+
+
+
+
+performOperation(id:any){
+debugger
+    switch(id){
+      
         
     }
   }
