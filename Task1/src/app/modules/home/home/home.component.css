@@ -1,15 +1,18 @@
 
 .input-cls{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* padding: 3px 3px; */
-    width: 50%;
+   background-color: azure;
 
 }
 
-
+.header{
+    background-color: grey;
+    height: 90px;
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* 
 .header{
     background-color: burlywood;
     padding: 30px;
@@ -31,4 +34,4 @@
 
     
 
-}
+} */

@@ -10,27 +10,32 @@ import { TextDisplayComponent } from './modules/home/Components/text-display/tex
 import { FormatterComponent } from './modules/home/Components/formatter/formatter.component';
 import { HomeModule } from './modules/home/home.module';
 import { FormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+// import { ColorPickerModule } from 'ngx-color-picker';
+// import { ColorPickerModule } from 'ngx-color-picker';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     TextDisplayComponent,
     FormatterComponent,
+
   
-   
-
-
   ],
   
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
-    FormsModule
+    FormsModule,
+    // ColorPickerModule
     
     
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
