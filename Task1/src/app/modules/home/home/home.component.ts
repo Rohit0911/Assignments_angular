@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { log } from 'console';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HomeComponent implements OnInit {
+todisplay() {
+throw new Error('Method not implemented.');
+}
+stylethis: { [klass: string]: any; }|null|undefined;
+result: any;
+name: any;
 
   constructor() { }
 
@@ -16,11 +23,43 @@ export class HomeComponent implements OnInit {
     
   }
 
-  currentOperation:any='';
+  childData:any='';
 
-  onButtonClick(item:any){
-    this.currentOperation=item;
+  receiveMessage($event:any){
+    this.childData=$event;
+    // console.log(this.childData);
+
+
   }
+  childVal='';
+
+
+  sendToDisplay():any{
+    this.childVal=this.childData;
+    return this.childVal;
+  }
+
+
+
+
+
+
+
+ 
+  
+
+
+
+
+  // currentOperation:any='';
+
+  // onButtonClick(item:any){
+  //   this.currentOperation=item;
+  // }
+
+
+
+  
 
 
 }

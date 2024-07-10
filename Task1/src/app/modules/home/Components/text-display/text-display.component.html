@@ -1,21 +1,19 @@
 <div class="Text">
   
   <div class="input">
-    <input
-      class="input-class"
-      placeholder="Type text here..."
-      type="text"
-      (input)="oninputChange($event)"
-    />
+    <textarea class="input-class" [(ngModel)]= "name"  placeholder="Type text here..." (input)="display()" ></textarea>
+    
   </div>
 
 
 
   <div class="output">
-    <div class="output-class">
-      <p>
-        {{ displayVal }}
-      </p>
+    
+    <div class="output-class" [ngStyle]="stylethis"> {{result}}
+      
+      
+
     </div>
   </div>
+  
 </div>

@@ -1,29 +1,18 @@
-<div class="header" >
-    <div class="header-nav">
-        
-         
-
-        <a href="app-home">TextFormatter</a>
-
-        <a href="#">Create User</a>
-        <a href="#">API-Call</a>
-       
-
-    </div>
-</div>
 
 
 <div class="Input-cls">
      
-    <text-display></text-display>
+    <!-- <text-display (sendtoParent)="receiveMessage($event)" ></text-display> -->
+     <div class="header">Text Formatter</div>
+
+   <text-display [getCharId]="sendToDisplay()"></text-display>
+
 
   
 
-    <text-formatter (buttonClick)="onButtonClick($event)"></text-formatter>
+    <text-formatter [ngStyle]="stylethis" (updateSignal)="receiveMessage($event)"></text-formatter>
    
 
    
-
-    
 
 </div>

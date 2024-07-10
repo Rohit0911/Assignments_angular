@@ -23,55 +23,39 @@ export class FormatterComponent implements OnInit {
 
   ngOnInit():void {
 
-   this.sharedService.newdata.subscribe(data=>{
+   this.sharedService.dataChange.subscribe(data=>{
     this.receieveddata=data;
     this.compute();
-
-
    });
     
   };
 
   compute(){
-    this.wordCount=this.receieveddata ? this.receieveddata.split(/\s+/).filter(Boolean).length :0;
-    this.charCOunt=this.receieveddata.length;
+    if(this.idButton=='clearbtn'){
+      this.wordCount=0;
+      this.charCOunt=0;
+    }else{
+     this.wordCount=this.receieveddata ? this.receieveddata.split(/\s+/).filter(Boolean).length :0;
+     this.charCOunt=this.receieveddata.length;
+    }
   }
 
-  
-
-  // countWords(x:string):number{
-  //   return x? x.trim().split(/\s+/).length:0;
-  // }
-
-
-  // countChars(y:string):number{
-  //   return y? y.length :0;
-  // }
 
 
 
-  
 
-  
-
-
-
-  // console.log(message);
-  
-
-  // message: string='';
-
-  @Output() updateData=new EventEmitter<any>();
+  @Output() updateSignal=new EventEmitter<any>();
 
   getId(event:any){
-    console.log("1");
-    if(event.target=='favcolor'){
-      this.idColor=event.target.value;
-      this.updateData.emit(this.idColor);
-    }else{
+    // console.log("1");
+    // if(event.target=='favcolor'){
+    //   this.idColor=event.target.value;
+    //   this.updateSignal.emit(this.idColor);
+    // }else{
       this.idButton=event.target.id;
-      this.updateData.emit(this.idButton);
-    }
+      this.updateSignal.emit(this.idButton);
+    // }
+
     
   }
 

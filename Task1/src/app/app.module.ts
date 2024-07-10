@@ -9,6 +9,12 @@ import { HomeComponent } from './modules/home/home/home.component';
 import { TextDisplayComponent } from './modules/home/Components/text-display/text-display.component';
 import { FormatterComponent } from './modules/home/Components/formatter/formatter.component';
 import { HomeModule } from './modules/home/home.module';
+import { FormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+// import { ColorPickerModule } from 'ngx-color-picker';
+// import { ColorPickerModule } from 'ngx-color-picker';
+
+
 
 @NgModule({
   declarations: [
@@ -16,20 +22,20 @@ import { HomeModule } from './modules/home/home.module';
     HomeComponent,
     TextDisplayComponent,
     FormatterComponent,
+
   
-   
-
-
   ],
   
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    FormsModule,
+    // ColorPickerModule
     
     
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
