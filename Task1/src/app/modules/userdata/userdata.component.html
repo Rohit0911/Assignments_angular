@@ -1,0 +1,57 @@
+
+<section class="container">
+    <header>Create User</header>
+    
+    <form class="form" [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+      <div class="input-box">
+        <input type="text" placeholder="Database Name" formControlName="dbname"/>
+        <small *ngIf="reactiveForm.get('dbname').invalid && reactiveForm.get('dbname').touched">
+          *Database name is required
+        </small>
+      </div>
+      
+      <div class="input-box">
+        <input type="text" placeholder="Port number" formControlName="portNumber"/>
+        <small *ngIf="reactiveForm.get('portNumber').invalid && reactiveForm.get('portNumber').touched">
+          *Port Number required
+        </small>
+      </div>
+      
+      <div class="input-box">
+        <input type="text" placeholder="Database Password" formControlName="password"/>
+        <small *ngIf="reactiveForm.get('password').invalid && reactiveForm.get('password').touched">
+          *Password is required
+        </small>
+      </div>
+      
+      <div class="input-box">
+        <input type="text" placeholder="Database URL" formControlName="url"/>
+        <small *ngIf="reactiveForm.get('url').invalid && reactiveForm.get('url').touched">
+          *URL is required
+        </small>
+      </div>
+      
+      <div class="column">
+        <input type="submit" value="Submit" class="submit-btn"> 
+        <input type="button" value="Cancel" class="submit-btn" (click)="clearForm()"> 
+      </div>
+    </form>
+  
+  
+  
+  
+  
+    <div *ngIf="savedFormDataArray.length" class="saved-data">
+      <h3>Saved Form Data:</h3>
+      <div *ngFor="let i of savedFormDataArray; let j = index" class="saved-entry">
+        <h4>Record {{ j + 1 }}</h4>
+        <p><strong>Database Name:</strong> {{ i.dbname }}</p>
+        <p><strong>Port Number:</strong> {{ i.portNumber }}</p>
+        <p><strong>Password:</strong> {{ i.password }}</p>
+        <p><strong>URL:</strong> {{ i.url }}</p>
+      </div>
+    </div>
+  </section>
+  
+  <router-outlet></router-outlet>
+  
