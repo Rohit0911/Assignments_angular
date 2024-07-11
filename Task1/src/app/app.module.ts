@@ -10,7 +10,6 @@ import { TextDisplayComponent } from './modules/home/Components/text-display/tex
 import { FormatterComponent } from './modules/home/Components/formatter/formatter.component';
 import { HomeModule } from './modules/home/home.module';
 import { FormsModule } from '@angular/forms';
-import { NameEditorComponent } from './modules/name-editor/name-editor.component';
 // <<<<<<< Assignmen2
 // import { ReactiveFormsModule } from '@angular/forms';
 // import { CookieService } from 'ngx-cookie-service';
