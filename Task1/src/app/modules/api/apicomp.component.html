@@ -1,0 +1,39 @@
+<div class="parent">
+    <div class="left">
+        <div class="userid">
+            <label for="user-id">User Id :-</label>
+            <input type="text" id="user-id" [(ngModel)]="userId">
+            <small></small>
+        </div>
+
+        <div class="items">
+            <button (click)="fetchComments()">Comments</button>
+            <button (click)="fetchAlbums()" >Albums</button>
+            <button (click)="fetchPhotos()" >Photos</button>
+            <button (click)="fetchToDo()">ToDo's</button>
+        </div>
+
+        <div class="options">
+            <button class="delete">Delete</button>
+            <button class="update">Update</button>
+            <button class="create">Create</button>
+        </div>
+
+        <div class="userinput">
+            <label for="input-body">Input Body :-</label>
+            <input type="text" id="input-body">
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="message">
+            <label for="error-msg">Error Msg</label>
+            <textarea id="error-msg" [(ngModel)]="errormsg" readonly></textarea>
+        </div>
+
+        <div class="response">
+            <label for="response-data">Response Data</label>
+            <textarea id="response-data" [(ngModel)]="responseData" readonly></textarea>
+        </div>
+    </div>
+</div>
