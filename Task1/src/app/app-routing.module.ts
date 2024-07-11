@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './modules/home/home/home.component';
+import { HomeComponent } from './modules/home/home.component';
+import { NameEditorComponent } from './modules/name-editor/name-editor.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,10 @@ const routes: Routes = [
     path: '', component:HomeComponent
   },
 
+  {
+    path:'name-editor',component:NameEditorComponent
+  }
+
 
 
 ];
@@ -24,6 +29,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
+
 })
 export class AppRoutingModule { }
 
