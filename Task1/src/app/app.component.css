@@ -1,0 +1,25 @@
+
+.header{
+    background-color: rgb(178, 176, 175);
+    padding: 30px;
+    margin: 0px;
+    /* padding: 0; */
+    
+    
+    text-decoration: none;
+    
+}
+    
+    
+.header-nav{ 
+        font-size:x-large;
+        font-family: 'Times New Roman', Times, serif;
+     
+        display: flex;
+        align-items: center;
+        
+        justify-content: space-around;
+
+    
+
+}

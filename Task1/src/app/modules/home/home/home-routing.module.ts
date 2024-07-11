@@ -7,9 +7,9 @@ import { TextDisplayComponent } from '../Components/text-display/text-display.co
 
 const routes: Routes = [
   {path :'',component:HomeComponent},
-  {path:'app-home',component:HomeComponent},
-  {path:'text-display',component:HomeComponent},
-  {path:'text-formatter',component:HomeComponent}
+  // {path:'app-home',component:HomeComponent},
+  // {path:'text-display',component:HomeComponent},
+  // {path:'text-formatter',component:HomeComponent}
 
 
 

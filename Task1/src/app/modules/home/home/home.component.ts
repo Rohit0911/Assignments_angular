@@ -10,6 +10,12 @@ import { log } from 'console';
 })
 
 export class HomeComponent implements OnInit {
+todisplay() {
+throw new Error('Method not implemented.');
+}
+stylethis: { [klass: string]: any; }|null|undefined;
+result: any;
+name: any;
 
   constructor() { }
 
@@ -25,6 +31,19 @@ export class HomeComponent implements OnInit {
 
 
   }
+  childVal='';
+
+
+  sendToDisplay():any{
+    this.childVal=this.childData;
+    return this.childVal;
+  }
+
+
+
+
+
+
 
  
   

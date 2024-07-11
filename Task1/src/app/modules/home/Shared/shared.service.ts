@@ -36,5 +36,6 @@ export class SharedService {
   setDataChange(data:string){
     this.inpdata=data;
     this.dataChange.emit(this.inpdata);
+    
   }
 }

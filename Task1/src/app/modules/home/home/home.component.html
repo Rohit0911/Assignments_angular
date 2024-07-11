@@ -1,3 +1,4 @@
+
 <div class="header" >
     <div class="header-nav">
         
@@ -5,7 +6,7 @@
 
         <a href="app-home">TextFormatter</a>
 
-        <a href="name-editor">Create User</a>
+<!--         <a href="name-editor">Create User</a> -->
         <a href="#">API-Call</a>
        
 
@@ -13,20 +14,20 @@
 </div>
 
 
+
 <div class="Input-cls">
      
     <!-- <text-display (sendtoParent)="receiveMessage($event)" ></text-display> -->
+     <div class="header">Text Formatter</div>
 
-   <text-display [getCharId]="(childData)"></text-display>
+   <text-display [getCharId]="sendToDisplay()"></text-display>
 
 
   
 
-    <text-formatter (updateSignal)="receiveMessage($event)"></text-formatter>
+    <text-formatter [ngStyle]="stylethis" (updateSignal)="receiveMessage($event)"></text-formatter>
    
 
    
-
-    
 
 </div>
