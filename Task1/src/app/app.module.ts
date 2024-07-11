@@ -56,7 +56,7 @@ import { HomeModule } from './modules/home/home.module';
     
     
   ],
-  providers: [CookieService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
