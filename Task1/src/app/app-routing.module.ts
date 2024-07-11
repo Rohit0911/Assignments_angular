@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './modules/home/home/home.component';
-// import { DatabaseComponent } from './modules/home/createuser/database/database.component';
+import { NameEditorComponent } from './modules/name-editor/name-editor.component';
+
 const routes: Routes = [
   {
     path: 'app-home', component:HomeComponent
@@ -9,11 +10,11 @@ const routes: Routes = [
   {
     path: '', component:HomeComponent
   },
+  {
+    path:'name-editor', component:NameEditorComponent
+  }
 
-  // {
-  //   path:'app-database',component:DatabaseComponent
-  // },
-
+  
 ];
 
 

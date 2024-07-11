@@ -9,6 +9,9 @@ import { HomeComponent } from './modules/home/home/home.component';
 import { TextDisplayComponent } from './modules/home/Components/text-display/text-display.component';
 import { FormatterComponent } from './modules/home/Components/formatter/formatter.component';
 import { HomeModule } from './modules/home/home.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+import { NameEditorComponent } from './modules/name-editor/name-editor.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,10 @@ import { HomeModule } from './modules/home/home.module';
     HomeComponent,
     TextDisplayComponent,
     FormatterComponent,
+    NameEditorComponent,
+  
+    
+
   
    
 
@@ -25,7 +32,9 @@ import { HomeModule } from './modules/home/home.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    ReactiveFormsModule,
+  
     
     
   ],
