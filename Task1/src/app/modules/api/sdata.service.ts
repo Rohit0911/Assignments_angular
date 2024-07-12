@@ -16,16 +16,16 @@ export class SdataService {
   }
 
   getComments(userId:number ):Observable<any>{
-    return this.http.get(`${this.primaryUrl}/comments?postId=${userId}`);
+    return this.http.get(`${this.primaryUrl}/comments?id=${userId}`);
   }
   getAlbums(userId:number ):Observable<any>{
-    return this.http.get(`${this.primaryUrl}/albums?userId=${userId}`);
+    return this.http.get(`${this.primaryUrl}/albums?id=${userId}`);
   }
   getPhotos(userId:number ):Observable<any>{
-    return this.http.get(`${this.primaryUrl}/photos?albumId=${userId}`);
+    return this.http.get(`${this.primaryUrl}/photos?id=${userId}`);
   }
   getToDo(userId:number ):Observable<any>{
-    return this.http.get(`${this.primaryUrl}/todos?userId=${userId}`);
+    return this.http.get(`${this.primaryUrl}/todos?id=${userId}`);
   }
 
   createData(userId: number, body: string): Observable<any> {
