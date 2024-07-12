@@ -4,13 +4,13 @@
   height: 900px;
 }
 .left{
-  background-color: rgb(202, 198, 198);
+  background-color: rgb(117, 114, 114);
   width: 20%;
   margin: 20px;
   height: 860px;
 }
 .right{
-  background-color: rgb(202, 198, 198);
+  background-color: rgb(117, 114, 114);
   width: 80%;
   margin: 20px;
 }
@@ -36,12 +36,14 @@
 }
 .option{
   margin: 20px;
-  background-color: rgb(215, 220, 224);
-
+  background-color: rgb(120, 179, 228);
+ padding: 9px;
+ border-radius: 6px;
 }
 .link-list{
   cursor: pointer;
   text-decoration: none;
+  
 
 }
 .heading{
