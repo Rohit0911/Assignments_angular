@@ -14,14 +14,14 @@
         </div>
 
         <div class="options">
-            <button class="delete">Delete</button>
-            <button class="update">Update</button>
-            <button class="create">Create</button>
+            <button class="delete" (click)="deleteData()" >Delete</button>
+            <button class="update" (click)="updateData()">Update</button>
+            <button class="create" (click)="createData()">Create</button>
         </div>
 
         <div class="userinput">
             <label for="input-body">Input Body :-</label>
-            <input type="text" id="input-body">
+            <input type="text" id="input-body" [(ngModel)]="inputBody">
         </div>
     </div>
 

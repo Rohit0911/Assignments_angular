@@ -16,16 +16,34 @@ export class SdataService {
   }
 
   getComments(userId:number ):Observable<any>{
-    return this.http.get(`${this.primaryUrl}/comments?postId=${userId}`);
+    return this.http.get(`${this.primaryUrl}/comments?id=${userId}`);
   }
   getAlbums(userId:number ):Observable<any>{
-    return this.http.get(`${this.primaryUrl}/albums?userId=${userId}`);
+    return this.http.get(`${this.primaryUrl}/albums?id=${userId}`);
   }
   getPhotos(userId:number ):Observable<any>{
-    return this.http.get(`${this.primaryUrl}/photos?albumId=${userId}`);
+    return this.http.get(`${this.primaryUrl}/photos?id=${userId}`);
   }
   getToDo(userId:number ):Observable<any>{
-    return this.http.get(`${this.primaryUrl}/todos?userId=${userId}`);
+    return this.http.get(`${this.primaryUrl}/todos?id=${userId}`);
+  }
+
+  createData(userId: number, body: string): Observable<any> {
+    return this.http.post(`${this.primaryUrl}/posts`, {
+      userId: userId,
+      body: body
+    });
+  }
+
+  updateData(userId: number, body: string): Observable<any> {
+    return this.http.put(`${this.primaryUrl}/posts/${userId}`, {
+      id: userId,
+      body: body
+    });
+  }
+
+  deleteData(userId: number): Observable<any> {
+    return this.http.delete(`${this.primaryUrl}/posts/${userId}`);
   }
 
 
