@@ -16,6 +16,7 @@ import { APIRoutingModule } from './modules/api/api-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientXsrfModule } from '@angular/common/http';
 import { APIModule } from './modules/api/api.module';
+import { GoChartComponent } from './modules/go-chart.component';
 
 
 
@@ -27,6 +28,7 @@ import { APIModule } from './modules/api/api.module';
 @NgModule({
   declarations: [
     AppComponent,
+    GoChartComponent,
    
   
   ],
