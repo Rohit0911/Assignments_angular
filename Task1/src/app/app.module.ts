@@ -11,6 +11,7 @@ import { APIRoutingModule } from './modules/api/api-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { APIModule } from './modules/api/api.module';
 import { HighchartModule } from './modules/highchart/highchart.module';
+import { GochartModule } from './modules/gochart/gochart.module';
 
 
 
@@ -40,7 +41,7 @@ import { HighchartModule } from './modules/highchart/highchart.module';
     
     APIModule,
     HighchartModule,
-  
+    GochartModule
    
 
 
