@@ -13,6 +13,7 @@ export class ApicompComponent implements OnInit {
   userId:number;
   responseData:string;
   errormsg:string;
+  inputBody:string;
 
   private primaryUrl='https://jsonplaceholder.typicode.com/users';
 
@@ -60,6 +61,27 @@ export class ApicompComponent implements OnInit {
     this.dataservice.getToDo(this.userId).subscribe(data=>this.responseData=JSON.stringify(data,null,2),
     error=>this.errormsg=error.message
   )
+  }
+
+  createData() {
+    this.dataservice.createData(this.userId, this.inputBody).subscribe(
+      data => this.responseData = JSON.stringify(data, null, 2),
+      error => this.errormsg = error.message
+    );
+  }
+
+  updateData() {
+    this.dataservice.updateData(this.userId, this.inputBody).subscribe(
+      data => this.responseData = JSON.stringify(data, null, 2),
+      error => this.errormsg = error.message
+    );
+  }
+
+  deleteData() {
+    this.dataservice.deleteData(this.userId).subscribe(
+      data => this.responseData = JSON.stringify(data, null, 2),
+      error => this.errormsg = error.message
+    );
   }
 
 
