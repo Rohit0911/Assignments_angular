@@ -10,6 +10,9 @@ export class GochartComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
+
+  
 
 }

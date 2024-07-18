@@ -41,6 +41,9 @@ export class FormatterComponent implements OnInit {
   }
 
 
+ 
+
+
 
 
 
@@ -54,6 +57,8 @@ export class FormatterComponent implements OnInit {
     // }else{
       this.idButton=event.target.id;
       this.updateSignal.emit(this.idButton);
+
+
     // }
 
     

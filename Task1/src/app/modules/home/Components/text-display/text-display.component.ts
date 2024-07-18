@@ -1,6 +1,8 @@
 import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit,Output,Renderer2,SimpleChanges } from '@angular/core';
 import { SharedService } from '../../Shared/shared.service';
 import { FormsModule } from '@angular/forms';
+import {SpcharPipe} from 'src/app/pipes/spchar.pipe'
+import { ChangeDetectorRef } from '@angular/core';
 
 
 @Component({
@@ -52,9 +54,11 @@ export class TextDisplayComponent implements OnInit, OnChanges {
 fontSize=18;
 stylethis:{[key:string]:string}={'font-size': `${this.fontSize}px`};
 
-constructor(private sharedServices :SharedService,private render:Renderer2, private el:ElementRef){}
+constructor(private sharedServices :SharedService,private render:Renderer2, private el:ElementRef, private spchar:SpcharPipe, private cdr:ChangeDetectorRef){}
+specialChar:boolean;
 
 display(){
+  this.specialChar=false;
   this.result=this.name;
   this.sharedServices.setDataChange(this.name);
   }
@@ -83,28 +87,29 @@ ngOnChanges(changes:SimpleChanges):void{
           break;
          
         case 'whspace':
-          this.result = this.name.replace(/\s+/g, '');
+          this.result = this.result.replace(/\s+/g, '');
           // this.name=this.name;
           console.log(this.name);
           break;
           
 
         case 'reverse':
-          this.result = this.name.split('').reverse().join('');
+          this.result = this.result.split('').reverse().join('');
           // this.name=this.name;
-          console.log(this.name);
+          // console.log(this.name);
           break;
 
         case 'rmspch':
-          this.result = this.name.replace(/[^a-zA-Z0-9]/g, '');
-          
-          console.log(this.name);
+          // this.result = this.name.replace(/[^a-zA-Z0-9]/g, '');
+          this.result=this.spchar.transform(this.result)
+          this.specialChar=!this.specialChar;
+        
+          // console.log(this.name);
           break;
 
         case 'rmstyle':
           const element = this.el.nativeElement.querySelector('.remove-style');
           this.render.removeAttribute(element, 'style');
-          
           break;
 
         case 'capstext':
