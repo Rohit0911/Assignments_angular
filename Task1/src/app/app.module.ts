@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { APIModule } from './modules/api/api.module';
 import { HighchartModule } from './modules/highchart/highchart.module';
 import { GochartModule } from './modules/gochart/gochart.module';
+import { SpcharPipe } from './pipes/spchar.pipe';
 
 
 
@@ -23,6 +24,7 @@ import { GochartModule } from './modules/gochart/gochart.module';
 @NgModule({
   declarations: [
     AppComponent,
+    SpcharPipe,
    
   
   ],
@@ -51,7 +53,7 @@ import { GochartModule } from './modules/gochart/gochart.module';
     
   ],
   
-  providers: [CookieService],
+  providers: [CookieService,SpcharPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
