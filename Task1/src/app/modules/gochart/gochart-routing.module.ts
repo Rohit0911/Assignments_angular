@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GochartComponent } from './gochart.component';
+import { GojsComponent } from './gochart.component';
 
 
 
 const routes: Routes = [
   {
-    path:'gochart',component:GochartComponent
+    path:'gochart',component:GojsComponent
   }
 ];
 
