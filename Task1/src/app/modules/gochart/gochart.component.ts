@@ -22,7 +22,7 @@ export class GojsComponent implements OnInit {
   ngAfterViewInit() {
     this.diagram = $(go.Diagram, 'gojsid');
 
-    // Create a simple node template with modified shapes
+    // Create a simple node template
     this.diagram.nodeTemplate = (
       $(go.Node, "Auto",
         $(go.Shape, { figure: "Rectangle" }, { strokeWidth: 0 },
@@ -51,10 +51,10 @@ export class GojsComponent implements OnInit {
       );
 
     const nodeDataArray = [
-      { key: 'Rubiscape', color: "#007FFF", textcolor: 'white', fontstyle: 'bold 14pt Calibri', shape1: 'Hexagon', group: 1 },
-      { key: 'RubiConnect', color: "#00BF00", textcolor: 'black', fontstyle: 'bold 12pt Calibri', shape1: 'Triangle', group: 2 },
-      { key: 'Rubistudio', color: "#00BF00", textcolor: 'black', fontstyle: 'bold 12pt Calibri', shape1: 'Triangle', group: 2 },
-      { key: 'Rubisight', color: "#00BF00", textcolor: 'black', fontstyle: 'bold 12pt Calibri', shape1: 'Triangle', group: 2 },
+      { key: 'Rubiscape', color: "#007FFF", textcolor: 'white', fontstyle: 'bold 14pt Calibari', shape1: 'Rectangle', group: 1 },
+      { key: 'RubiConnect', color: "#00BF00", textcolor: 'black', fontstyle: 'bold 12pt Calibari', shape1: 'Rectangle', group: 2 },
+      { key: 'Rubistudio', color: "#00BF00", textcolor: 'black', fontstyle: 'bold 12pt Calibari', shape1: 'Rectangle', group: 2 },
+      { key: 'Rubisight', color: "#00BF00", textcolor: 'black', fontstyle: 'bold 12pt Calibari', shape1: 'Rectangle', group: 2 },
       { key: 'Workflows', color: "#BEBEBE", textcolor: 'black', shape1: 'RoundedRectangle', borderwidth: 2 },
       { key: 'Workbooks', color: "#BEBEBE", textcolor: 'black', shape1: 'RoundedRectangle', borderwidth: 2 },
       { key: 'DashBoard', color: "#BEBEBE", textcolor: 'black', shape1: 'RoundedRectangle', borderwidth: 2 },
@@ -63,14 +63,14 @@ export class GojsComponent implements OnInit {
     ];
 
     const linkDataArray = [
-      { from: 'Rubiscape', to: 'RubiConnect', color: 'blue', width: '5px', arrowtype: 'OpenTriangle' },
-      { from: 'Rubiscape', to: 'Rubistudio', color: 'blue', width: '5px', arrowtype: 'OpenTriangle' },
-      { from: 'Rubiscape', to: 'Rubisight', color: 'blue', width: '5px', arrowtype: 'OpenTriangle' },
-      { from: 'Rubistudio', to: 'Workflows', color: 'green', width: '5px', arrowtype: 'OpenTriangle' },
-      { from: 'Rubistudio', to: 'Workbooks', color: 'green', width: '5px', arrowtype: 'OpenTriangle' },
-      { from: 'Rubisight', to: 'DashBoard', color: 'purple', width: '5px', arrowtype: 'OpenTriangle' },
-      { from: 'Workbooks', to: 'Models', color: 'orange', width: '5px', arrowtype: 'OpenTriangle' },
-      { from: 'Workbooks', to: 'Reusable Code', color: 'black', width: '5px', arrowtype: 'OpenTriangle' },
+      { from: 'Rubiscape', to: 'RubiConnect', color: 'blue', width: '5px', arrowtype: 'Standard' },
+      { from: 'Rubiscape', to: 'Rubistudio', color: 'blue', width: '5px' },
+      { from: 'Rubiscape', to: 'Rubisight', color: 'blue', width: '5px' },
+      { from: 'Rubistudio', to: 'Workflows', color: 'green', width: '5px' },
+      { from: 'Rubistudio', to: 'Workbooks', color: 'green', width: '5px' },
+      { from: 'Rubisight', to: 'DashBoard', color: 'purple', width: '5px' },
+      { from: 'Workbooks', to: 'Models', color: 'orange', width: '5px' },
+      { from: 'Workbooks', to: 'Reusable Code', color: 'black', width: '5px' },
     ];
 
     this.diagram.layout = $(go.TreeLayout, { angle: 90 });
