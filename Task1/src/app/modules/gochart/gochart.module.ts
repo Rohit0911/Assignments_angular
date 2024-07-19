@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { GochartRoutingModule } from './gochart-routing.module';
-import { GochartComponent } from './gochart.component';
+import { GojsComponent } from './gochart.component';
 
 
 @NgModule({
   declarations: [
-    GochartComponent
+    GojsComponent
   ],
   imports: [
     CommonModule,
